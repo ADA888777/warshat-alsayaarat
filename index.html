@@ -108,7 +108,8 @@
       <label for="plate_number" data-template-id="label-plate" class="canva-text block font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">رقم لوحة السيارة (اختياري)</label><input id="plate_number" class="field" maxlength="32">
      </div>
      <div>
-      <label for="service_type" data-template-id="label-service" class="canva-text block font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">نوع الخدمة المطلوبة *</label><select id="service_type" class="field" required="" aria-describedby="error-service_type"><option value="">اختر الخدمة</option></select>
+      <label for="service_type" data-template-id="label-service" class="canva-text block font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">نوع الخدمة المطلوبة *</label><select id="service_type" class="field" required="" disabled aria-describedby="error-service_type"><option value="">جارٍ تحميل الخدمات...</option></select>
+      <button id="booking-services-retry" type="button" class="outline-btn px-4 py-2 mt-2 text-sm" hidden>إعادة تحميل الخدمات</button>
       <p id="error-service_type" class="text-red-700 mt-1 text-sm"></p>
      </div>
      <div>
@@ -264,3 +265,4 @@
 
 
 </body></html>
+
