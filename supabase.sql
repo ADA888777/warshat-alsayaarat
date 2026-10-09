@@ -342,9 +342,11 @@ create policy bookings_admin_update
   using ((select public.is_admin()))
   with check ((select public.is_admin()));
 
-create policy profiles_read_self_or_admin
+-- لا تستدعِ is_admin() من سياسة profiles؛ الدالة نفسها تقرأ profiles.
+-- المستخدم يحتاج قراءة صفه فقط، بينما تتحقق الدالة بصلاحية SECURITY DEFINER.
+create policy profiles_read_self
   on public.profiles for select to authenticated
-  using (id = (select auth.uid()) or (select public.is_admin()));
+  using (id = (select auth.uid()));
 
 -- صلاحيات API صريحة؛ لا توجد كتابة عامة للجداول الحساسة.
 grant usage on schema public to anon, authenticated;
@@ -359,3 +361,4 @@ grant select on table public.customers, public.cars, public.bookings, public.pro
 grant update (status) on table public.bookings to authenticated;
 
 commit;
+
