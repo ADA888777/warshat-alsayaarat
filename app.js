@@ -69,6 +69,9 @@
       setConnection(false, true);
       ['home-services-state','services-state'].forEach(id => { $(id).hidden = false; $(id).textContent = 'جارٍ تحميل الخدمات...'; });
       $('home-retry').hidden = $('services-retry').hidden = true;
+      $('booking-services-retry').hidden = true;
+      $('service_type').disabled = true;
+      $('service_type').replaceChildren(new Option('جارٍ تحميل الخدمات...', ''));
       try {
         if (!supabaseClient) throw new Error('client unavailable');
         const {data, error} = await supabaseClient.from('services')
@@ -77,7 +80,8 @@
         services = data || [];
         setConnection(true);
         renderServices();
-      } catch {
+      } catch (error) {
+        console.error('تعذر تحميل قائمة الخدمات:', error);
         services = [];
         setConnection(false);
         renderServices();
@@ -109,7 +113,11 @@
       }
       const select = $('service_type');
       const previouslySelected = select.value;
-      select.replaceChildren(new Option('اختر الخدمة', ''));
+      const placeholder = services.length ? 'اختر الخدمة' :
+        servicesLoadFailed ? 'تعذر تحميل الخدمات' : 'لا توجد خدمات متاحة';
+      select.replaceChildren(new Option(placeholder, ''));
+      select.disabled = services.length === 0;
+      $('booking-services-retry').hidden = !servicesLoadFailed;
       const serviceFilter = $('service-filter');
       const filterValue = serviceFilter.value;
       serviceFilter.replaceChildren(new Option('كل الخدمات', ''));
@@ -143,6 +151,7 @@
 
     $('home-retry').addEventListener('click', loadServices);
     $('services-retry').addEventListener('click', loadServices);
+    $('booking-services-retry').addEventListener('click', loadServices);
 
     function fieldError(id, text) {
       $('error-' + id).textContent = text;
@@ -491,3 +500,4 @@
     });
 
     initializeSupabase();
+
