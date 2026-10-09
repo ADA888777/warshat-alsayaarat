@@ -5,10 +5,11 @@
     const $ = id => document.getElementById(id);
     const views = ['home', 'services', 'booking', 'confirmation', 'admin'];
     const statusNames = {new:'جديد', confirmed:'مؤكد', completed:'مكتمل', cancelled:'ملغي'};
-    const connectionFailure = 'تعذر الاتصال بقاعدة البيانات. تحقق من إعدادات Supabase والجداول والصلاحيات.';
+    const connectionFailure = 'الخدمات غير متاحة مؤقتًا. يرجى المحاولة لاحقًا.';
     const adminQuery = 'id,reference_code,appointment_at,status,created_at,updated_at,customer:customers(full_name,phone),car:cars(make,model,plate_number),service:services(id,name_ar)';
     let supabaseClient = null;
     let services = [];
+    let servicesLoadFailed = false;
     let bookings = [];
     let lastBooking = null;
     let selectedCancel = null;
@@ -58,11 +59,7 @@
       return Number.isNaN(date.getTime()) ? '—' : new Intl.DateTimeFormat('ar-SA', {dateStyle:'medium',timeStyle:'short'}).format(date);
     }
     function setConnection(connected, loading = false) {
-      $('connection-status').textContent = loading ? 'جارٍ فحص الاتصال...' : connected ? 'قاعدة البيانات متصلة' : 'قاعدة البيانات غير متصلة';
-      $('connection-status').className = 'inline-flex rounded-full px-4 py-1.5 font-bold ' +
-        (loading ? 'bg-slate-200 text-slate-700' : connected ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800');
-      $('retry-connection').hidden = loading || connected;
-      setMessage('connection-error', loading || connected ? '' : connectionFailure);
+      servicesLoadFailed = !connected && !loading;
     }
 
     // لا تُعرض الخدمات إلا بعد نجاح الاستعلام الحقيقي.
@@ -80,15 +77,12 @@
         services = data || [];
         setConnection(true);
         renderServices();
-        setMessage('test-result', 'نجح استعلام الخدمات من Supabase.', true);
       } catch {
         services = [];
         setConnection(false);
         renderServices();
-        setMessage('test-result', connectionFailure);
       } finally {
         connectionBusy = false;
-        $('test-connection').disabled = false;
       }
     }
     function renderServices() {
@@ -109,7 +103,7 @@
           target.appendChild(card);
         });
         $(stateId).textContent = services.length ? '' :
-          $('connection-error').hidden ? 'لم تتم إضافة الخدمات بعد' : connectionFailure;
+          servicesLoadFailed ? connectionFailure : 'لا توجد خدمات متاحة حاليًا.';
         $(stateId).hidden = !!services.length;
         $(retryId).hidden = !!services.length;
       }
@@ -147,13 +141,8 @@
       }
     }
 
-    $('retry-connection').addEventListener('click', loadServices);
     $('home-retry').addEventListener('click', loadServices);
     $('services-retry').addEventListener('click', loadServices);
-    $('test-connection').addEventListener('click', () => {
-      $('test-connection').disabled = true;
-      loadServices();
-    });
 
     function fieldError(id, text) {
       $('error-' + id).textContent = text;
@@ -193,13 +182,13 @@
       const code = String(error?.code || '');
       const text = String(error?.message || '').toLowerCase();
       if (code === '42883' || text.includes('could not find the function') || text.includes('function public.create_public_booking')) {
-        return 'دالة create_public_booking غير موجودة. شغّل ملف SQL الخاص بك في Supabase وتحقق من أسماء المعاملات والصلاحيات.';
+        return 'خدمة الحجز غير متاحة حاليًا. يرجى المحاولة لاحقًا.';
       }
       if (code === '23505' || code === '23P01' || /conflict|already.booked|slot.taken|موعد محجوز/i.test(text)) {
         return 'هذا الموعد يتعارض مع حجز آخر، اختر وقتًا مختلفًا.';
       }
       if (code === '22023') return 'تحقق من الاسم ورقم الجوال والسيارة والخدمة وموعد الحجز ثم حاول مرة أخرى.';
-      return 'تعذر إرسال طلب الحجز. تحقق من الاتصال وإعدادات SQL والصلاحيات، ثم حاول مرة أخرى.';
+      return 'تعذر إرسال طلب الحجز. تحقق من البيانات وحاول مرة أخرى.';
     }
     $('booking-form').addEventListener('submit', async event => {
       event.preventDefault();
@@ -229,7 +218,7 @@
         const result = Array.isArray(data) ? data[0] : data;
         const reference = result?.reference_code;
         if (!result || typeof reference !== 'string' || !/^WR-[A-F0-9]{12}$/.test(reference)) {
-          setMessage('form-message', 'لم تُرجع قاعدة البيانات رقم حجز صالحًا؛ لم يتم عرض التأكيد. راجع دالة SQL ثم أعد المحاولة.');
+          setMessage('form-message', 'تعذر تأكيد طلبك الآن. حاول مرة أخرى أو تواصل مع الورشة.');
           return;
         }
         lastBooking = result;
@@ -286,7 +275,7 @@
         const permission = await supabaseClient.rpc('is_admin');
         if (generation !== authGeneration) return;
         if (permission.error) {
-          setMessage('auth-message', 'تعذر التحقق من صلاحية الإدارة. تأكد من إنشاء دالة is_admin وصلاحياتها، ثم حاول إعادة تحميل الصفحة.');
+          setMessage('auth-message', 'تعذر التحقق من صلاحية الحساب. حاول إعادة تحميل الصفحة.');
           $('admin-auth-loading').hidden = true;
           return;
         }
@@ -350,10 +339,10 @@
     function adminError(error) {
       const code = String(error?.code || '');
       const text = String(error?.message || '').toLowerCase();
-      if (code === '42501' || /permission denied|row.level.security/.test(text)) return 'لا تسمح سياسات RLS بهذه العملية. تحقق من صلاحيات المسؤول في Supabase.';
-      if (code === 'PGRST200' || code === 'PGRST201' || /relationship/.test(text)) return 'تعذر قراءة علاقات الحجوزات. راجع أسماء العلاقات والحقول في قسم إعداد Supabase.';
+      if (code === '42501' || /permission denied|row.level.security/.test(text)) return 'لا تملك صلاحية تنفيذ هذا الإجراء.';
+      if (code === 'PGRST200' || code === 'PGRST201' || /relationship/.test(text)) return 'تعذر تحميل تفاصيل الحجوزات حاليًا. حاول مرة أخرى لاحقًا.';
       if (/jwt|session|token|unauthorized/i.test(text) || code === 'PGRST301') return 'انتهت الجلسة أو لم تعد صالحة. سجّل الدخول مجددًا.';
-      return 'تعذر تحميل أو تحديث الحجوزات. تحقق من الاتصال والجداول والصلاحيات ثم أعد المحاولة.';
+      return 'تعذر تحميل أو تحديث الحجوزات. حاول مرة أخرى لاحقًا.';
     }
     async function loadBookings() {
       if (!adminAuthorized || adminBusy) return;

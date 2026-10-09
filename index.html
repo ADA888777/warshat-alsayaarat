@@ -24,11 +24,6 @@
    </nav>
   </header>
   <main id="main-content">
-   <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-4">
-    <div class="flex flex-wrap items-center gap-3"><span id="connection-status" role="status" class="inline-flex rounded-full bg-slate-200 px-4 py-1.5 font-bold text-slate-700">جارٍ فحص الاتصال...</span> <button id="retry-connection" type="button" data-template-id="retry-connection" class="canva-button outline-btn px-4 py-1.5" hidden="" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">إعادة المحاولة</button>
-    </div>
-    <p id="connection-error" role="alert" class="notice-error font-bold mt-2" hidden=""></p>
-   </div>
    <section id="home" class="view">
     <div class="relative min-h-[470px] overflow-hidden bg-[#102338] flex items-center"><img data-template-id="hero-image" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" alt="فني يفحص محرك سيارة داخل ورشة صيانة">
      <div class="hero-mask absolute inset-0"></div>
@@ -83,12 +78,11 @@
    </section>
    <section id="services" class="view max-w-7xl mx-auto px-5 lg:px-8 py-12" hidden=""><button type="button" data-go="home" data-template-id="services-back" class="canva-button font-bold mb-5" style="color: rgb(194, 65, 12); font-weight: 400; font-style: normal; font-size: 16px;">← العودة إلى الرئيسية</button>
     <h2 data-template-id="services-title" class="canva-text font-extrabold mb-2" style="color: rgb(16, 35, 56); font-weight: 800; font-style: normal; font-size: 24px;">خدماتنا</h2>
-    <p data-template-id="services-intro" class="canva-text mb-8" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">الخدمات المعروضة هنا تُجلب مباشرةً من قاعدة البيانات. اختر خدمة لبدء طلب الحجز.</p>
+    <p data-template-id="services-intro" class="canva-text mb-8" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">استعرض الخدمات المتاحة واختر المناسبة لبدء طلب الحجز.</p>
     <div id="services-list" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
     <div id="services-state" class="soft-card p-8 text-center" role="status">
      جارٍ تحميل الخدمات...
     </div><button id="services-retry" type="button" data-template-id="services-retry" class="canva-button outline-btn px-5 py-2 mt-4" hidden="" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">إعادة المحاولة</button>
-    <p data-template-id="service-hints" class="canva-text mt-8" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">أمثلة لعناوين خدمات يمكن إضافتها من Supabase: تغيير زيت المحرك، الصيانة الدورية، فحص السيارة، صيانة المكابح، صيانة المكيف، فحص الأعطال. لا تُضاف هذه الخدمات تلقائيًا.</p>
    </section>
    <section id="booking" class="view max-w-4xl mx-auto px-5 py-12" hidden=""><button type="button" data-go="services" data-template-id="booking-back" class="canva-button font-bold mb-5" style="color: rgb(194, 65, 12); font-weight: 400; font-style: normal; font-size: 16px;">← العودة إلى الخدمات</button>
     <h2 data-template-id="booking-title" class="canva-text font-extrabold mb-2" style="color: rgb(16, 35, 56); font-weight: 800; font-style: normal; font-size: 24px;">حجز موعد صيانة</h2>
@@ -232,46 +226,6 @@
      </div>
     </div>
    </section>
-   <section class="max-w-7xl mx-auto px-5 lg:px-8 pb-8">
-    <details data-template-id="setup-panel" class="canva-panel soft-card p-5 sm:p-7" style="background: rgb(255, 255, 255);"><summary data-template-id="setup-title" class="canva-text cursor-pointer font-extrabold" style="color: rgb(16, 35, 56); font-weight: 800; font-style: normal; font-size: 20px;">إعداد Supabase</summary>
-     <div class="mt-5 space-y-5 leading-loose">
-      <p data-template-id="setup-ownership" class="canva-text" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">المخطط وسياسات الأمان ودوال الحجز موجودة في supabase.sql. شغّل الملف من SQL Editor في مشروع Supabase قبل استخدام النظام.</p>
-      <p data-template-id="setup-files" class="canva-text" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">الملفات مستقلة: index.html للهيكل، وstyle.css للتصميم، وapp.js للواجهة والاتصال بقاعدة البيانات.</p>
-      <div>
-       <h2 data-template-id="setup-tables-title" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 24px;">الجداول والحقول المتوقعة</h2>
-       <ul class="list-disc list-inside break-words space-y-1" dir="ltr">
-        <li><code>services: id, name_ar, description_ar, active</code></li>
-        <li><code>customers: id, full_name, phone</code></li>
-        <li><code>cars: id, make, model, plate_number</code></li>
-        <li><code>bookings: id, reference_code, customer_id, car_id, service_id, appointment_at, status, updated_at, created_at</code></li>
-        <li><code>profiles: id, role</code></li>
-       </ul>
-      </div>
-      <div>
-       <h2 data-template-id="setup-rpc-title" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 24px;">دوال RPC والمعاملات المطلوبة</h2>
-       <p class="break-all" dir="ltr"><code>create_public_booking(p_full_name, p_phone, p_car_make, p_car_model, p_plate_number, p_service_id, p_appointment_at, p_notes)</code></p>
-       <p class="break-all" dir="ltr"><code>is_admin()</code></p>
-       <p data-template-id="setup-rpc-note" class="canva-text" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">يعيد create_public_booking صفًا واحدًا يتضمن reference_code بصيغة WR- متبوعة بـ 12 رقمًا سداسيًا، مع ملخص الموعد. تعيد is_admin قيمة true فقط للمستخدم ذي الدور admin.</p>
-      </div>
-      <div>
-       <h2 data-template-id="setup-query-title" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 24px;">الاستعلام المتوقع للحجوزات</h2><code class="block p-4 rounded-xl bg-slate-100 break-all" dir="ltr">bookings.select('id,reference_code,appointment_at,status,created_at,updated_at,customer:customers(full_name,phone),car:cars(make,model,plate_number),service:services(id,name_ar)')</code>
-       <p data-template-id="setup-query-note" class="canva-text" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">إذا اختلفت أسماء العلاقات أو الحقول في قاعدة بياناتك، عدّل استعلام الإدارة وثوابت عرض النتائج ليتطابقا مع مخططك. يجب حماية القراءة والتحديث بسياسات RLS.</p>
-      </div>
-      <div>
-       <h2 data-template-id="setup-steps-title" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 24px;">خطوات الربط</h2>
-       <ol class="list-decimal list-inside space-y-1">
-        <li data-template-id="setup-step-one" class="canva-text" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">شغّل ملف supabase.sql من SQL Editor في مشروع Supabase الصحيح.</li>
-        <li data-template-id="setup-step-two" class="canva-text" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">أضف الخدمات الفعلية إلى جدول services واجعل الخدمات المراد عرضها نشطة.</li>
-        <li data-template-id="setup-step-three" class="canva-text" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">أنشئ مستخدم الإدارة من قسم Auth في Supabase.</li>
-        <li data-template-id="setup-step-four" class="canva-text" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">امنح المستخدم دور admin باستخدام أمر SQL الوارد في README.md.</li>
-        <li data-template-id="setup-step-five" class="canva-text" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">تحقق من رابط المشروع والمفتاح sb_publishable في أعلى app.js، ثم اختبر جلب الخدمات.</li>
-       </ol>
-      </div>
-      <p data-template-id="setup-security" class="canva-text font-bold" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">اختبار الاتصال يؤكد قراءة الخدمات فقط؛ أما الحجز والإدارة فيحتاجان اختبارًا مستقلًا. المفتاح المنشور مسموح في الواجهة، بينما تمنع RLS قراءة الحجوزات وتعديلها لغير المسؤول.</p><button id="test-connection" type="button" data-template-id="test-connection" class="canva-button primary px-5 py-2.5" style="background: rgb(237, 117, 44); color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">اختبار الاتصال</button>
-      <p id="test-result" role="status" class="font-bold" hidden=""></p>
-     </div>
-    </details>
-   </section>
   </main>
   <footer data-template-id="site-footer" class="canva-footer mt-12" style="background: rgb(16, 35, 56);">
    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-7 flex flex-wrap justify-between gap-3">
@@ -282,7 +236,7 @@
   <div id="cancel-modal" class="fixed inset-0 z-50 bg-slate-950/65 grid place-items-center p-5" hidden="">
    <div class="soft-card w-full max-w-md p-7" role="dialog" aria-modal="true" aria-labelledby="cancel-title">
     <h2 id="cancel-title" data-template-id="cancel-title" class="canva-text font-extrabold mb-2" style="color: rgb(16, 35, 56); font-weight: 800; font-style: normal; font-size: 24px;">هل تريد إلغاء هذا الحجز؟</h2>
-    <p data-template-id="cancel-description" class="canva-text mb-6" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">ستتغير حالة الحجز إلى «ملغي» بعد نجاح التحديث في Supabase. يمكنك الرجوع دون إجراء أي تغيير.</p>
+    <p data-template-id="cancel-description" class="canva-text mb-6" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">ستتغير حالة الحجز إلى «ملغي» بعد نجاح التحديث. يمكنك الرجوع دون إجراء أي تغيير.</p>
     <div class="flex flex-wrap gap-3"><button id="cancel-confirm" type="button" data-template-id="cancel-confirm" class="canva-button primary px-5 py-2.5" style="background: rgb(237, 117, 44); color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">نعم، إلغاء الحجز</button> <button id="cancel-close" type="button" data-template-id="cancel-close" class="canva-button outline-btn px-5 py-2.5" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">رجوع</button>
     </div>
    </div>
@@ -306,7 +260,7 @@
      <div class="flex flex-wrap gap-2"><button type="button" data-action="confirm" data-template-id="row-confirm" class="canva-button outline-btn px-3 py-1.5"></button> <button type="button" data-action="advance" data-template-id="row-advance" class="canva-button outline-btn px-3 py-1.5"></button> <button type="button" data-action="cancel" data-template-id="row-cancel" class="canva-button outline-btn px-3 py-1.5"></button>
      </div></td>
    </tr>
-  </template><!-- app.js: إعداد Supabase والمنطق والتفاعلات؛ يمكن نقله إلى ملف مستقل لاحقًا. -->
+  </template>
 
 
 </body></html>
