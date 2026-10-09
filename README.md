@@ -18,6 +18,18 @@
 4. الملف ينشئ ملفات profiles للعملاء افتراضيًا. لا يمنح بيانات التسجيل أو المستخدم نفسه دور المسؤول.
 5. المفتاح الموجود في أعلى `app.js` هو مفتاح Supabase المنشور `sb_publishable_...`، وهو المفتاح المناسب للواجهة الأمامية. لا تضع `service_role` أو `sb_secret_...` في ملفات الموقع.
 
+إذا ظهر الخطأ `42P17` عند قراءة الخدمات، حدّث سياسة `profiles` من **SQL Editor** بهذا الإصلاح، ثم أعد تحميل الموقع. السياسة الذاتية لا تستدعي `is_admin()` من داخل `profiles`، وهذا يمنع التكرار:
+
+```sql
+begin;
+drop policy if exists profiles_read_self_or_admin on public.profiles;
+drop policy if exists profiles_read_self on public.profiles;
+create policy profiles_read_self
+  on public.profiles for select to authenticated
+  using (id = (select auth.uid()));
+commit;
+```
+
 إذا لم يعمل المفتاح، افتح **Project Settings → API Keys** أو نافذة **Connect** في لوحة Supabase، وانسخ **Publishable key** الخاصة بالمشروع. سيبدأ المفتاح الصحيح بـ `sb_publishable_`. لا تستخدم المفتاح السري. توثيق Supabase الحالي يوضح أن publishable key مخصص للتطبيقات التي تعمل في المتصفح وأن سياسة RLS تحدد ما يمكنه الوصول إليه.
 
 ### إنشاء حساب المسؤول
