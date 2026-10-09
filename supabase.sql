@@ -116,7 +116,6 @@ $function$;
 
 revoke all on function public.is_admin() from public, anon;
 revoke all on function public.handle_new_user_profile() from public, anon, authenticated;
-revoke all on function public.guard_booking_status_transition() from public, anon, authenticated;
 grant execute on function public.is_admin() to authenticated;
 
 create or replace function public.guard_booking_status_transition()
@@ -140,6 +139,7 @@ begin
 end;
 $function$;
 
+revoke all on function public.guard_booking_status_transition() from public, anon, authenticated;
 drop trigger if exists bookings_status_transition_guard on public.bookings;
 create trigger bookings_status_transition_guard
 before update of status on public.bookings
