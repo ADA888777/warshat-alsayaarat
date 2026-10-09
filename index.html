@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20261009-02-dddca2a","C":{"Abril Fatface":"YACgEZbkUVE,0","Albert Sans":"YAHO2HRfeh4,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo Black":"YACgEZulLoA,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Baloo 2":"YAHO2IcQUcM,0","Barlow Condensed":"YAFdJljEuFc,0","Barlow":"YAFdJsyuOPM,1","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Cinzel":"YACgEeV8bIQ,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Figtree":"YAHO2b-mV7A,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Fredoka":"YACgEZml080,0","Georgia":"YAGzXkO0pEM,0","Hanken Grotesk":"YAHO2VB9G0I,0","Helvetica":"YAFcf7zkXN0,0","IBM Plex Mono":"YAFdJkmvhGI,0","IBM Plex Sans":"YAFdJgT0SHI,0","Impact":"YAFcfnjI7Vk,0","Instrument Sans":"YAHO2bKyaSQ,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Italiana":"YAHO2Toik_w,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Karla":"YAHO2V2NSXM,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Libre Caslon Display":"YAHO2XhLmt0,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Noto Sans JP":"YAFdJiHXlcI,0","Noto Sans KR":"YAGsojZj-RQ,0","Nunito Sans":"YAFdtQJYB9w,1","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Outfit":"YAHO2nVlg14,0","Pacifico":"YADLjORQ1u4,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAHO2gdhi18,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Public Sans":"YAFdJj8NdaU,1","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Sarabun":"YAFdJssSnME,0","Schibsted Grotesk":"YAHO2sWydRk,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Space Mono":"YADW1-vpsoc,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/3ea5843eacd3e51f.telemetry_sdk.js" integrity="sha512-1IT905GQp6Xezy7dJYJjQl6KtI/PDxD5Vu755gJMNA+luF1QkRT8rHzF+xP7Ekem4HWP8sPFcQQAmx6FCSGaMg=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ورشة السيارات</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#102338;--orange:#ed752c;--paper:#f5f7f9;--muted:#64748b}
+    *{box-sizing:border-box}body{font-family:Cairo,sans-serif;color:var(--navy);margin:0}
+    button,input,select,textarea{font:inherit}button{cursor:pointer}
+    :focus-visible{outline:3px solid #ed752c;outline-offset:3px}
+    .view[hidden], [hidden]{display:none!important}
+    .soft-card{background:white;border:1px solid #e6eaf0;border-radius:22px;box-shadow:0 12px 35px rgba(16,35,56,.06)}
+    .primary{background:var(--orange);color:#fff;border-radius:12px;font-weight:800;transition:transform .2s,background .2s}
+    .primary:hover{background:#cf5d19;transform:translateY(-2px)}
+    .outline-btn{border:1px solid #cbd5e1;border-radius:12px;background:white;transition:background .2s}
+    .outline-btn:hover{background:#f1f5f9}
+    .field{width:100%;border:1px solid #cbd5e1;border-radius:12px;background:#fff;padding:12px 14px;min-height:50px;color:#102338}
+    .field:focus{border-color:#ed752c;outline:2px solid #fed7aa}
+    .field[aria-invalid=true]{border-color:#dc2626}
+    .service-icon{display:grid;place-items:center;width:50px;height:50px;border-radius:14px;background:#fff0e6;color:#d85f19}
+    .hero-mask{background:linear-gradient(270deg,rgba(10,27,45,.97),rgba(10,27,45,.78) 52%,rgba(10,27,45,.18))}
+    .status{display:inline-flex;padding:3px 11px;border-radius:999px;font-weight:700;white-space:nowrap}
+    .status-جديد{background:#fff0df;color:#995018}.status-مؤكد{background:#dbeafe;color:#1d4ed8}
+    .status-مكتمل{background:#dcfce7;color:#166534}.status-ملغي{background:#fee2e2;color:#991b1b}
+    .view:not([hidden]){animation:enter .3s ease both}@keyframes enter{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:767px){.hero-mask{background:linear-gradient(270deg,rgba(10,27,45,.94),rgba(10,27,45,.70))}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/263f7f1ec427fef1.data_sdk.js" type="text/javascript" integrity="sha512-G5r5+ZpgQ1ELqZ8tI9imlWClKvYZ57SrzbGr898u8le5l2OuBwnWDOf9qbb9mCGSCmLi/3zszXyL+nX96lu7Lg=="></script>
+  <script src="/_sdk/7f51878a26dda571.editing_sdk.js" type="text/javascript" integrity="sha512-lv2tc4rONGhIWbY0ih8IjIqw943uiwvC9BM8dCj48SpTnOr728gJkoyMnfD0Yfa9KbBgBGdq6uAFyQuDfezvEg=="></script>
+  <script src="/_sdk/221ab7571fc66e1b.resizing_sdk.js" type="text/javascript" integrity="sha512-brXJ8PEVMWyvFfRXR3J+lXcBL9xcTCDHg4wYW7JDpQNdbOBkBezAQsQLUeUc2BOFREYS4N9GREjyhzX1N1VFdA=="></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full min-h-screen" style="background: rgb(245, 247, 249);">
+  <header data-template-id="site-header" class="canva-header sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200" style="background: rgb(255, 255, 255);">
+   <div class="max-w-7xl mx-auto px-5 lg:px-8 h-[74px] flex items-center justify-between gap-5"><button type="button" data-go="home" class="flex items-center gap-3 text-right"> <span class="service-icon !w-10 !h-10"><i data-lucide="wrench" class="w-5 h-5"></i></span> <span data-template-id="brand-name" class="canva-text font-extrabold" style="color: rgb(16, 35, 56); font-weight: 800; font-style: normal; font-size: 20px;">ورشة السيارات</span> </button>
+    <nav aria-label="التنقل الرئيسي" class="hidden md:flex items-center gap-1" id="desktop-nav"><button type="button" data-go="home" data-template-id="nav-home" class="canva-button px-3 py-2 rounded-lg hover:bg-slate-100" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">الرئيسية</button> <button type="button" data-go="services" data-template-id="nav-services" class="canva-button px-3 py-2 rounded-lg hover:bg-slate-100" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">الخدمات</button> <button type="button" data-go="booking" data-template-id="nav-booking" class="canva-button px-3 py-2 rounded-lg hover:bg-slate-100" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">حجز موعد</button> <button type="button" data-go="confirmation" data-template-id="nav-confirmation" class="canva-button px-3 py-2 rounded-lg hover:bg-slate-100" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">تأكيد الحجز</button> <button type="button" data-go="admin" data-template-id="nav-admin" class="canva-button px-3 py-2 rounded-lg hover:bg-slate-100" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">لوحة الإدارة</button>
+    </nav><button id="menu-toggle" type="button" class="md:hidden outline-btn p-2" aria-label="فتح القائمة" aria-controls="mobile-nav" aria-expanded="false"><i data-lucide="menu" class="w-6 h-6"></i></button>
+   </div>
+   <nav id="mobile-nav" aria-label="التنقل للجوال" class="hidden md:hidden border-t border-slate-200 p-4 bg-white grid gap-1"><button type="button" data-go="home" class="text-right p-3 rounded-lg hover:bg-slate-100">الرئيسية</button> <button type="button" data-go="services" class="text-right p-3 rounded-lg hover:bg-slate-100">الخدمات</button> <button type="button" data-go="booking" class="text-right p-3 rounded-lg hover:bg-slate-100">حجز موعد</button> <button type="button" data-go="confirmation" class="text-right p-3 rounded-lg hover:bg-slate-100">تأكيد الحجز</button> <button type="button" data-go="admin" class="text-right p-3 rounded-lg hover:bg-slate-100">لوحة الإدارة</button>
+   </nav>
+  </header>
+  <main id="main-content">
+   <section id="home" class="view">
+    <div class="relative min-h-[470px] overflow-hidden bg-[#102338] flex items-center"><img data-template-id="hero-image" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" alt="فني يفحص محرك سيارة داخل ورشة صيانة">
+     <div class="hero-mask absolute inset-0"></div>
+     <div class="relative w-full max-w-7xl mx-auto px-5 lg:px-8 py-20 text-white">
+      <div class="max-w-2xl">
+       <p data-template-id="hero-eyebrow" class="canva-text text-orange-300 font-bold mb-4" style="color: rgb(253, 186, 116); font-weight: 400; font-style: normal; font-size: 16px;">صيانة موثوقة تبدأ بخطوة بسيطة</p>
+       <h1 data-template-id="hero-title" class="canva-text font-extrabold leading-tight mb-5" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 44px;">سيارتك تستاهل أفضل عناية</h1>
+       <p data-template-id="hero-description" class="canva-text leading-loose mb-8 text-slate-100" style="color: rgb(241, 245, 249); font-weight: 400; font-style: normal; font-size: 19px;">احجز موعد صيانة سيارتك بكل سهولة، واختر الخدمة والوقت المناسب لك</p><button type="button" data-go="booking" data-template-id="hero-cta" class="canva-button primary px-7 py-3" style="background: rgb(237, 117, 44); color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 16px;">احجز موعدك الآن</button>
+      </div>
+     </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16">
+     <div class="flex justify-between items-end gap-4 mb-7">
+      <div>
+       <p data-template-id="home-kicker" class="canva-text text-orange-600 font-bold mb-1" style="color: rgb(194, 65, 12); font-weight: 400; font-style: normal; font-size: 16px;">ما نقدمه لك</p>
+       <h2 data-template-id="home-services-title" class="canva-text font-extrabold" style="color: rgb(16, 35, 56); font-weight: 800; font-style: normal; font-size: 24px;">خدمات أساسية لسيارتك</h2>
+      </div><button type="button" data-go="services" data-template-id="all-services" class="canva-button text-orange-700 font-bold hover:underline" style="color: rgb(194, 65, 12); font-weight: 400; font-style: normal; font-size: 16px;">عرض جميع الخدمات ←</button>
+     </div>
+     <div class="grid md:grid-cols-3 gap-5">
+      <article class="soft-card p-6">
+       <span class="service-icon mb-5"><i data-lucide="droplets"></i></span>
+       <h3 data-template-id="home-oil" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 19px;">تغيير زيت المحرك</h3>
+       <p data-template-id="home-oil-desc" class="canva-text text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">عناية بالمحرك تبدأ بالزيت المناسب.</p>
+      </article>
+      <article class="soft-card p-6">
+       <span class="service-icon mb-5"><i data-lucide="settings-2"></i></span>
+       <h3 data-template-id="home-maintenance" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 19px;">الصيانة الدورية</h3>
+       <p data-template-id="home-maintenance-desc" class="canva-text text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">متابعة منتظمة لأداء سيارتك.</p>
+      </article>
+      <article class="soft-card p-6">
+       <span class="service-icon mb-5"><i data-lucide="scan-search"></i></span>
+       <h3 data-template-id="home-inspection" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 19px;">فحص السيارة</h3>
+       <p data-template-id="home-inspection-desc" class="canva-text text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">فحص واضح قبل انطلاقك على الطريق.</p>
+      </article>
+     </div>
+    </div>
+    <div class="bg-white py-16">
+     <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <h2 data-template-id="features-title" class="canva-text font-extrabold mb-7" style="color: rgb(16, 35, 56); font-weight: 800; font-style: normal; font-size: 24px;">لماذا تختار ورشتنا؟</h2>
+      <div class="grid md:grid-cols-3 gap-5">
+       <div class="soft-card p-6">
+        <i data-lucide="calendar-check" class="text-orange-600 mb-4"></i>
+        <h3 data-template-id="feature-one" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 19px;">سهولة الحجز</h3>
+        <p data-template-id="feature-one-desc" class="canva-text text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">اختر الخدمة والموعد خلال دقائق.</p>
+       </div>
+       <div class="soft-card p-6">
+        <i data-lucide="timer" class="text-orange-600 mb-4"></i>
+        <h3 data-template-id="feature-two" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 19px;">سرعة الخدمة</h3>
+        <p data-template-id="feature-two-desc" class="canva-text text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">خطوات واضحة تساعدك على تنظيم وقتك.</p>
+       </div>
+       <div class="soft-card p-6">
+        <i data-lucide="heart-handshake" class="text-orange-600 mb-4"></i>
+        <h3 data-template-id="feature-three" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 19px;">العناية بالسيارات</h3>
+        <p data-template-id="feature-three-desc" class="canva-text text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">نهتم بتفاصيل سيارتك في كل زيارة.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
+     <h2 data-template-id="contact-title" class="canva-text font-extrabold mb-5" style="color: rgb(16, 35, 56); font-weight: 800; font-style: normal; font-size: 24px;">معلومات الورشة</h2>
+     <div class="soft-card p-6 grid md:grid-cols-2 gap-5">
+      <p data-template-id="contact-hours" class="canva-text" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">ساعات العمل التجريبية: السبت إلى الخميس، ٨ صباحًا – ٦ مساءً.</p>
+      <p data-template-id="contact-location" class="canva-text" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">الموقع التجريبي: داخل المدينة، قرب المنطقة الصناعية.</p>
+      <p data-template-id="contact-disclaimer" class="canva-text text-slate-500 md:col-span-2" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">هذه معلومات توضيحية لنموذج الموقع وليست عنوانًا لورشة فعلية.</p>
+     </div>
+    </div>
+   </section>
+   <section id="services" class="view max-w-7xl mx-auto px-5 lg:px-8 py-12" hidden=""><button type="button" data-go="home" data-template-id="services-back" class="canva-button text-orange-700 font-bold mb-5" style="color: rgb(194, 65, 12); font-weight: 400; font-style: normal; font-size: 16px;">← العودة إلى الرئيسية</button>
+    <h2 data-template-id="services-title" class="canva-text font-extrabold mb-2" style="color: rgb(16, 35, 56); font-weight: 800; font-style: normal; font-size: 24px;">خدماتنا</h2>
+    <p data-template-id="services-intro" class="canva-text text-slate-600 mb-8" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">اختر الخدمة المناسبة لسيارتك، ثم حدد موعدك بسهولة.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+     <article class="soft-card p-6 flex flex-col">
+      <span class="service-icon mb-5"><i data-lucide="droplets"></i></span>
+      <h3 data-template-id="s1-name" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 19px;">تغيير زيت المحرك</h3>
+      <p data-template-id="s1-desc" class="canva-text text-slate-600 mb-6 flex-1" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">تغيير الزيت للمساعدة في الحفاظ على كفاءة المحرك.</p><button type="button" data-service="تغيير زيت المحرك" data-template-id="s1-book" class="canva-button primary px-5 py-2.5 self-start" style="background: rgb(237, 117, 44); color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">احجز الآن</button>
+     </article>
+     <article class="soft-card p-6 flex flex-col">
+      <span class="service-icon mb-5"><i data-lucide="settings-2"></i></span>
+      <h3 data-template-id="s2-name" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 19px;">الصيانة الدورية</h3>
+      <p data-template-id="s2-desc" class="canva-text text-slate-600 mb-6 flex-1" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">مراجعة دورية لأجزاء السيارة الأساسية.</p><button type="button" data-service="الصيانة الدورية" data-template-id="s2-book" class="canva-button primary px-5 py-2.5 self-start" style="background: rgb(237, 117, 44); color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">احجز الآن</button>
+     </article>
+     <article class="soft-card p-6 flex flex-col">
+      <span class="service-icon mb-5"><i data-lucide="search-check"></i></span>
+      <h3 data-template-id="s3-name" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 19px;">فحص السيارة</h3>
+      <p data-template-id="s3-desc" class="canva-text text-slate-600 mb-6 flex-1" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">فحص عام يمنحك صورة أوضح عن حالة السيارة.</p><button type="button" data-service="فحص السيارة" data-template-id="s3-book" class="canva-button primary px-5 py-2.5 self-start" style="background: rgb(237, 117, 44); color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">احجز الآن</button>
+     </article>
+     <article class="soft-card p-6 flex flex-col">
+      <span class="service-icon mb-5"><i data-lucide="disc-3"></i></span>
+      <h3 data-template-id="s4-name" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 19px;">صيانة المكابح</h3>
+      <p data-template-id="s4-desc" class="canva-text text-slate-600 mb-6 flex-1" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">فحص المكابح والعناية بمكوناتها.</p><button type="button" data-service="صيانة المكابح" data-template-id="s4-book" class="canva-button primary px-5 py-2.5 self-start" style="background: rgb(237, 117, 44); color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">احجز الآن</button>
+     </article>
+     <article class="soft-card p-6 flex flex-col">
+      <span class="service-icon mb-5"><i data-lucide="snowflake"></i></span>
+      <h3 data-template-id="s5-name" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 19px;">صيانة المكيف</h3>
+      <p data-template-id="s5-desc" class="canva-text text-slate-600 mb-6 flex-1" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">فحص أداء التبريد ومكونات المكيف.</p><button type="button" data-service="صيانة المكيف" data-template-id="s5-book" class="canva-button primary px-5 py-2.5 self-start" style="background: rgb(237, 117, 44); color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">احجز الآن</button>
+     </article>
+     <article class="soft-card p-6 flex flex-col">
+      <span class="service-icon mb-5"><i data-lucide="scan-search"></i></span>
+      <h3 data-template-id="s6-name" class="canva-text font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 700; font-style: normal; font-size: 19px;">فحص الأعطال</h3>
+      <p data-template-id="s6-desc" class="canva-text text-slate-600 mb-6 flex-1" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">تشخيص أولي للمساعدة في تحديد سبب العطل.</p><button type="button" data-service="فحص الأعطال" data-template-id="s6-book" class="canva-button primary px-5 py-2.5 self-start" style="background: rgb(237, 117, 44); color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">احجز الآن</button>
+     </article>
+    </div>
+   </section>
+   <section id="booking" class="view max-w-4xl mx-auto px-5 py-12" hidden=""><button type="button" data-go="services" data-template-id="booking-back" class="canva-button text-orange-700 font-bold mb-5" style="color: rgb(194, 65, 12); font-weight: 400; font-style: normal; font-size: 16px;">← العودة إلى الخدمات</button>
+    <h2 data-template-id="booking-title" class="canva-text font-extrabold mb-2" style="color: rgb(16, 35, 56); font-weight: 800; font-style: normal; font-size: 24px;">حجز موعد صيانة</h2>
+    <p data-template-id="booking-intro" class="canva-text text-slate-600 mb-7" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">املأ بياناتك وسنستلم طلب موعدك. الحجز طلب مبدئي وليس تأكيدًا نهائيًا للموعد.</p>
+    <form id="booking-form" novalidate="" class="soft-card p-5 sm:p-8 grid sm:grid-cols-2 gap-5">
+     <div>
+      <label for="customer_name" data-template-id="label-name" class="canva-text block font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">اسم العميل *</label><input id="customer_name" class="field" autocomplete="name" required="">
+      <p class="error text-red-700 text-sm mt-1" id="error-customer_name"></p>
+     </div>
+     <div>
+      <label for="phone" data-template-id="label-phone" class="canva-text block font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">رقم الجوال *</label><input id="phone" class="field" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" required="" placeholder="05XXXXXXXX">
+      <p class="error text-red-700 text-sm mt-1" id="error-phone"></p>
+     </div>
+     <div>
+      <label for="car_type" data-template-id="label-car-type" class="canva-text block font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">نوع السيارة *</label><input id="car_type" class="field" required="">
+      <p class="error text-red-700 text-sm mt-1" id="error-car_type"></p>
+     </div>
+     <div>
+      <label for="car_model" data-template-id="label-car-model" class="canva-text block font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">موديل السيارة *</label><input id="car_model" class="field" required="">
+      <p class="error text-red-700 text-sm mt-1" id="error-car_model"></p>
+     </div>
+     <div>
+      <label for="plate_number" data-template-id="label-plate" class="canva-text block font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">رقم لوحة السيارة (اختياري)</label><input id="plate_number" class="field">
+     </div>
+     <div>
+      <label for="service_type" data-template-id="label-service" class="canva-text block font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">نوع الخدمة المطلوبة *</label><select id="service_type" class="field" required=""><option value="">اختر الخدمة</option><option>تغيير زيت المحرك</option><option>الصيانة الدورية</option><option>فحص السيارة</option><option>صيانة المكابح</option><option>صيانة المكيف</option><option>فحص الأعطال</option></select>
+      <p class="error text-red-700 text-sm mt-1" id="error-service_type"></p>
+     </div>
+     <div>
+      <label for="date" data-template-id="label-date" class="canva-text block font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">التاريخ المناسب *</label><input id="date" class="field" type="date" required="">
+      <p class="error text-red-700 text-sm mt-1" id="error-date"></p>
+     </div>
+     <div>
+      <label for="time" data-template-id="label-time" class="canva-text block font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">الوقت المناسب *</label><input id="time" class="field" type="time" min="08:00" max="18:00" required="">
+      <p class="error text-red-700 text-sm mt-1" id="error-time"></p>
+     </div>
+     <div class="sm:col-span-2">
+      <label for="notes" data-template-id="label-notes" class="canva-text block font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">ملاحظات إضافية (اختياري)</label><textarea id="notes" class="field min-h-28" rows="3"></textarea>
+     </div>
+     <p id="form-message" role="alert" class="sm:col-span-2 text-red-700 font-bold" hidden=""></p>
+     <div class="sm:col-span-2 flex flex-wrap items-center gap-4">
+      <button id="submit-booking" type="submit" data-template-id="submit-booking" class="canva-button primary px-8 py-3" style="background: rgb(237, 117, 44); color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 16px;">تأكيد الحجز</button><span id="loading-text" data-template-id="loading-text" class="canva-text text-slate-600" hidden="" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">جارٍ إرسال الطلب...</span>
+     </div>
+    </form>
+   </section>
+   <section id="confirmation" class="view max-w-3xl mx-auto px-5 py-14" hidden="">
+    <div id="confirmation-empty" class="soft-card p-8 text-center">
+     <h2 data-template-id="confirmation-empty-title" class="canva-text font-extrabold mb-3" style="color: rgb(16, 35, 56); font-weight: 800; font-style: normal; font-size: 24px;">لا يوجد حجز للتأكيد بعد</h2>
+     <p data-template-id="confirmation-empty-desc" class="canva-text text-slate-600 mb-5" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">أرسل طلب حجز أولًا حتى تتمكن من عرض ملخصه هنا.</p><button type="button" data-go="booking" data-template-id="confirmation-start" class="canva-button primary px-6 py-3" style="background: rgb(237, 117, 44); color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">ابدأ الحجز</button>
+    </div>
+    <div id="confirmation-result" hidden="">
+     <div class="soft-card p-7 sm:p-10">
+      <div class="service-icon !bg-green-100 !text-green-700 mb-5">
+       <i data-lucide="check"></i>
+      </div>
+      <h2 data-template-id="confirmation-title" class="canva-text font-extrabold mb-2" style="color: rgb(16, 35, 56); font-weight: 800; font-style: normal; font-size: 24px;">تم استلام طلب حجزك بنجاح</h2>
+      <p data-template-id="confirmation-desc" class="canva-text text-slate-600 mb-7" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">احتفظ بالرقم المرجعي. سنراجع طلب الموعد قبل تأكيده.</p>
+      <div class="bg-slate-50 rounded-2xl p-5 space-y-3">
+       <p><span data-template-id="summary-reference-label" class="canva-text font-bold" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">الرقم المرجعي:</span> <strong id="summary-reference" dir="ltr"></strong></p>
+       <p><span data-template-id="summary-name-label" class="canva-text font-bold" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">اسم العميل:</span> <span id="summary-name"></span></p>
+       <p><span data-template-id="summary-car-label" class="canva-text font-bold" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">السيارة:</span> <span id="summary-car"></span></p>
+       <p><span data-template-id="summary-service-label" class="canva-text font-bold" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">الخدمة:</span> <span id="summary-service"></span></p>
+       <p><span data-template-id="summary-date-label" class="canva-text font-bold" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">التاريخ:</span> <span id="summary-date"></span></p>
+       <p><span data-template-id="summary-time-label" class="canva-text font-bold" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">الوقت:</span> <span id="summary-time"></span></p>
+      </div>
+      <div class="flex flex-wrap gap-3 mt-7">
+       <button type="button" data-go="home" data-template-id="confirm-home" class="canva-button primary px-5 py-3" style="background: rgb(237, 117, 44); color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">العودة إلى الرئيسية</button><button type="button" data-go="admin" data-template-id="confirm-admin" class="canva-button outline-btn px-5 py-3" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">عرض لوحة الإدارة التجريبية</button>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="admin" class="view max-w-7xl mx-auto px-5 lg:px-8 py-12" hidden=""><button type="button" data-go="home" data-template-id="admin-back" class="canva-button text-orange-700 font-bold mb-5" style="color: rgb(194, 65, 12); font-weight: 400; font-style: normal; font-size: 16px;">← العودة إلى الرئيسية</button>
+    <div class="flex flex-wrap justify-between gap-4 items-start mb-7">
+     <div>
+      <h2 data-template-id="admin-title" class="canva-text font-extrabold mb-1" style="color: rgb(16, 35, 56); font-weight: 800; font-style: normal; font-size: 24px;">لوحة الإدارة</h2>
+      <p data-template-id="admin-disclaimer" class="canva-text text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">لوحة تجريبية عامة وغير محمية؛ لا تُدخل بيانات عملاء حقيقيين. تظهر الحجوزات هنا لكل من يفتح الموقع.</p>
+     </div>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-4 mb-7">
+     <div class="soft-card p-5">
+      <p data-template-id="stat-total-label" class="canva-text text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">إجمالي الحجوزات</p><strong id="stat-total" class="text-3xl">٠</strong>
+     </div>
+     <div class="soft-card p-5">
+      <p data-template-id="stat-today-label" class="canva-text text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">حجوزات اليوم</p><strong id="stat-today" class="text-3xl">٠</strong>
+     </div>
+     <div class="soft-card p-5">
+      <p data-template-id="stat-upcoming-label" class="canva-text text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">الحجوزات القادمة</p><strong id="stat-upcoming" class="text-3xl">٠</strong>
+     </div>
+    </div>
+    <div class="soft-card overflow-hidden">
+     <div class="p-5 flex flex-wrap gap-4 items-end">
+      <div class="flex-1 min-w-48">
+       <label for="search" data-template-id="search-label" class="canva-text block font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">البحث عن حجز</label><input id="search" class="field" type="search" placeholder="ابحث بالاسم أو رقم الحجز">
+      </div>
+      <div class="min-w-40">
+       <label for="status-filter" data-template-id="filter-label" class="canva-text block font-bold mb-2" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">تصفية حسب الحالة</label><select id="status-filter" class="field"><option value="">كل الحالات</option><option>جديد</option><option>مؤكد</option><option>مكتمل</option><option>ملغي</option></select>
+      </div>
+     </div>
+     <p id="admin-message" role="status" class="px-5 text-red-700 font-bold" hidden=""></p>
+     <div class="overflow-x-auto">
+      <table class="w-full min-w-[1050px] text-right">
+       <thead class="bg-slate-100 text-slate-700">
+        <tr>
+         <th class="p-4">رقم الحجز</th>
+         <th class="p-4">اسم العميل</th>
+         <th class="p-4">رقم الجوال</th>
+         <th class="p-4">السيارة</th>
+         <th class="p-4">الخدمة</th>
+         <th class="p-4">التاريخ</th>
+         <th class="p-4">الوقت</th>
+         <th class="p-4">الحالة</th>
+         <th class="p-4">الإجراءات</th>
+        </tr>
+       </thead>
+       <tbody id="booking-rows"></tbody>
+      </table>
+     </div>
+     <p id="admin-empty" data-template-id="admin-empty" class="canva-text text-slate-600 text-center p-8" hidden="" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">لا توجد حجوزات مطابقة حاليًا.</p>
+    </div>
+   </section>
+  </main>
+  <footer data-template-id="site-footer" class="canva-footer bg-[#102338] text-white mt-12" style="background: rgb(16, 35, 56);">
+   <div class="max-w-7xl mx-auto px-5 lg:px-8 py-7 flex flex-wrap justify-between gap-3">
+    <p data-template-id="footer-brand" class="canva-text font-bold" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">ورشة السيارات</p>
+    <p data-template-id="footer-note" class="canva-text text-slate-300" style="color: rgb(203, 213, 225); font-weight: 400; font-style: normal; font-size: 16px;">نموذج تجريبي لخدمة حجز مواعيد السيارات</p>
+   </div>
+  </footer>
+  <div id="cancel-modal" class="fixed inset-0 z-50 bg-slate-950/65 grid place-items-center p-5" hidden="">
+   <div class="soft-card w-full max-w-md p-7" role="dialog" aria-modal="true" aria-labelledby="cancel-title">
+    <h2 id="cancel-title" data-template-id="cancel-title" class="canva-text font-extrabold mb-2" style="color: rgb(16, 35, 56); font-weight: 800; font-style: normal; font-size: 24px;">هل تريد إلغاء هذا الحجز؟</h2>
+    <p data-template-id="cancel-description" class="canva-text text-slate-600 mb-6" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">ستتغير حالة الحجز إلى «ملغي». يمكنك الرجوع دون إجراء أي تغيير.</p>
+    <div class="flex gap-3">
+     <button id="cancel-confirm" type="button" data-template-id="cancel-confirm" class="canva-button primary px-5 py-2.5" style="background: rgb(237, 117, 44); color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">نعم، إلغاء الحجز</button><button id="cancel-close" type="button" data-template-id="cancel-close" class="canva-button outline-btn px-5 py-2.5" style="color: rgb(16, 35, 56); font-weight: 400; font-style: normal; font-size: 16px;">رجوع</button>
+    </div>
+   </div>
+  </div>
+  <template id="row-template">
+   <tr data-template-id="booking-row" class="canva-table border-t border-slate-200">
+    <td class="p-4 font-bold whitespace-nowrap" data-field="reference_number"></td>
+    <td class="p-4" data-field="customer_name"></td>
+    <td class="p-4 whitespace-nowrap" data-field="phone"></td>
+    <td class="p-4" data-field="car"></td>
+    <td class="p-4" data-field="service_type"></td>
+    <td class="p-4 whitespace-nowrap" data-field="date"></td>
+    <td class="p-4" data-field="time"></td>
+    <td class="p-4"><span data-template-id="row-status" data-field="status" class="canva-tag status"></span></td>
+    <td class="p-4">
+     <div class="flex gap-2 whitespace-nowrap"><button type="button" data-action="confirm" data-template-id="row-confirm" class="canva-button outline-btn px-3 py-1.5"></button> <button type="button" data-action="advance" data-template-id="row-advance" class="canva-button outline-btn px-3 py-1.5"></button> <button type="button" data-action="cancel" data-template-id="row-cancel" class="canva-button outline-btn px-3 py-1.5 text-red-700"></button>
+     </div></td>
+   </tr>
+  </template>
+  <script>
+    const $ = id => document.getElementById(id);
+    const views = ['home','services','booking','confirmation','admin'];
+    const form = $('booking-form');
+    let records = [], selectedCancel = null, busy = false, lastBooking = null;
+    const arabicNumber = n => Number(n).toLocaleString('ar-SA');
+    const localDate = () => { const d = new Date(); return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-'); };
+    function show(view) {
+      views.forEach(v => $(v).hidden = v !== view);
+      $('confirmation-empty').hidden = !!lastBooking;
+      $('confirmation-result').hidden = !lastBooking;
+      $('mobile-nav').classList.add('hidden');
+      $('menu-toggle').setAttribute('aria-expanded','false');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    document.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => show(b.dataset.go)));
+    document.querySelectorAll('[data-service]').forEach(b => b.addEventListener('click', () => {
+      $('service_type').value = b.dataset.service;
+      show('booking');
+    }));
+    $('menu-toggle').addEventListener('click', () => {
+      const open = $('mobile-nav').classList.toggle('hidden');
+      $('menu-toggle').setAttribute('aria-expanded',String(!open));
+    });
+    $('date').min = localDate();
+
+    function message(id, text, success = false) {
+      const el = $(id); el.textContent = text; el.hidden = !text;
+      el.classList.toggle('text-green-700',success);
+      el.classList.toggle('text-red-700',!success);
+    }
+    function validate() {
+      let first = null;
+      const errors = {};
+      ['customer_name','phone','car_type','car_model','service_type','date','time'].forEach(id => {
+        const el = $(id), value = el.value.trim();
+        let error = !value ? 'هذا الحقل مطلوب.' : '';
+        if (id === 'phone' && value && !/^(?:\+9665|9665|05)\d{8}$/.test(value.replace(/[\s-]/g,''))) error = 'أدخل رقم جوال سعودي صحيحًا، مثل 05XXXXXXXX.';
+        if (id === 'date' && value && value < localDate()) error = 'اختر تاريخ اليوم أو تاريخًا لاحقًا.';
+        if (id === 'time' && value && (value < '08:00' || value > '18:00')) error = 'اختر وقتًا بين ٨ صباحًا و٦ مساءً.';
+        errors[id] = error;
+        $('error-' + id).textContent = error;
+        el.setAttribute('aria-invalid',String(!!error));
+        if (error && !first) first = el;
+      });
+      if(first) first.focus();
+      return !first;
+    }
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      message('form-message','');
+      if(busy || !validate()) return;
+      if(records.length >= 999){message('form-message','تم بلوغ الحد الأقصى للحجوزات.');return;}
+      busy = true; $('submit-booking').disabled = true; $('submit-booking').classList.add('opacity-60'); $('loading-text').hidden = false;
+      const reference = 'WR-' + new Date().getFullYear() + '-' + String(Date.now()).slice(-8);
+      const booking = {
+        customer_name:$('customer_name').value.trim(),phone:$('phone').value.trim().replace(/[\s-]/g,''),
+        car_type:$('car_type').value.trim(),car_model:$('car_model').value.trim(),
+        plate_number:$('plate_number').value.trim(),service_type:$('service_type').value,
+        date:$('date').value,time:$('time').value,notes:$('notes').value.trim(),
+        status:'جديد',reference_number:reference,created_at:new Date().toISOString()
+      };
+      try {
+        const result = await window.dataSdk.create(booking);
+        if(!result.isOk) throw new Error('تعذر حفظ الطلب.');
+        lastBooking = booking;
+        $('summary-reference').textContent = booking.reference_number;
+        $('summary-name').textContent = booking.customer_name;
+        $('summary-car').textContent = booking.car_type + ' ' + booking.car_model;
+        $('summary-service').textContent = booking.service_type;
+        $('summary-date').textContent = booking.date;
+        $('summary-time').textContent = booking.time;
+        form.reset(); show('confirmation');
+      } catch {
+        message('form-message','تعذر حفظ الحجز الآن. حاول مرة أخرى.');
+      } finally {
+        busy = false; $('submit-booking').disabled = false; $('submit-booking').classList.remove('opacity-60'); $('loading-text').hidden = true;
+      }
+    });
+
+    function updateCell(row, field, text) {
+      const el = row.querySelector('[data-field="'+field+'"]');
+      if(el.textContent !== text) el.textContent = text;
+    }
+    function render() {
+      const today = localDate();
+      $('stat-total').textContent = arabicNumber(records.length);
+      $('stat-today').textContent = arabicNumber(records.filter(r=>r.date===today && r.status!=='ملغي').length);
+      $('stat-upcoming').textContent = arabicNumber(records.filter(r=>r.date>=today && !['ملغي','مكتمل'].includes(r.status)).length);
+      const query = $('search').value.trim().toLowerCase(), filter = $('status-filter').value;
+      const visible = records.filter(r=>(!filter || r.status===filter) && (!query || (r.customer_name+' '+r.reference_number).toLowerCase().includes(query)))
+        .sort((a,b)=>(b.created_at||'').localeCompare(a.created_at||''));
+      const tbody = $('booking-rows'), existing = new Map([...tbody.children].map(tr=>[tr.dataset.id,tr]));
+      visible.forEach(r=>{
+        let row = existing.get(r.__backendId);
+        if(!row){row=$('row-template').content.firstElementChild.cloneNode(true);row.dataset.id=r.__backendId;tbody.appendChild(row);}
+        existing.delete(r.__backendId);
+        ['reference_number','customer_name','phone','service_type','date','time','status'].forEach(k=>updateCell(row,k,String(r[k]||'')));
+        updateCell(row,'car',r.car_type+' '+r.car_model);
+        const status=row.querySelector('[data-field="status"]');
+        status.className='canva-tag status status-'+r.status;
+        row.querySelector('[data-action="confirm"]').hidden=r.status!=='جديد';
+        row.querySelector('[data-action="advance"]').hidden=r.status!=='مؤكد';
+        row.querySelector('[data-action="cancel"]').hidden=['ملغي','مكتمل'].includes(r.status);
+      });
+      existing.forEach(row=>row.remove());
+      $('admin-empty').hidden = visible.length > 0;
+    }
+    $('search').addEventListener('input',render);
+    $('status-filter').addEventListener('change',render);
+    async function changeStatus(record, status, button) {
+      if(!record || busy) return;
+      busy=true; button.disabled=true; button.classList.add('opacity-60');
+      message('admin-message','');
+      try {
+        const result=await window.dataSdk.update({...record,status});
+        if(!result.isOk) throw new Error('تعذر تحديث الحجز.');
+        records=records.map(r=>r.__backendId===record.__backendId?{...r,status}:r);
+        render(); message('admin-message','تم تحديث حالة الحجز بنجاح.',true);
+      } catch {message('admin-message','تعذر تحديث الحجز. حاول مرة أخرى.');}
+      finally {busy=false;button.disabled=false;button.classList.remove('opacity-60');}
+    }
+    $('booking-rows').addEventListener('click',e=>{
+      const button=e.target.closest('[data-action]'); if(!button)return;
+      const record=records.find(r=>r.__backendId===button.closest('tr').dataset.id);
+      if(!record)return;
+      if(button.dataset.action==='cancel'){selectedCancel=record.__backendId;$('cancel-modal').hidden=false;$('cancel-confirm').focus();}
+      else changeStatus(record,button.dataset.action==='confirm'?'مؤكد':'مكتمل',button);
+    });
+    function closeModal(){selectedCancel=null;$('cancel-modal').hidden=true;}
+    $('cancel-close').addEventListener('click',closeModal);
+    $('cancel-modal').addEventListener('click',e=>{if(e.target===$('cancel-modal'))closeModal();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape' && !$('cancel-modal').hidden)closeModal();});
+    $('cancel-confirm').addEventListener('click',async()=>{
+      const record=records.find(r=>r.__backendId===selectedCancel);
+      if(!record)return closeModal();
+      await changeStatus(record,'ملغي',$('cancel-confirm'));
+      closeModal();
+    });
+    (async()=>{
+      try {
+        const result=await window.dataSdk.init({onDataChanged(data){records=data;render();}});
+        if(!result.isOk) throw new Error('تعذر تحميل الحجوزات.');
+      } catch {message('admin-message','تعذر تحميل الحجوزات حاليًا. حاول فتح الصفحة مجددًا.');message('form-message','خدمة الحجز غير متاحة حاليًا. حاول لاحقًا.');$('submit-booking').disabled=true;}
+    })();
+    if(window.lucide)lucide.createIcons();
+  </script>
+ 
+</body></html>
